@@ -1,0 +1,402 @@
+
+C:\cmder_mini
+λ mongosh
+Current Mongosh Log ID: 63650b7440040e9fc11ad06b
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.0
+Using MongoDB:          6.0.2
+Using Mongosh:          1.6.0
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2022-11-04T09:53:57.988-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+empresa> db.clientes.insertMany([{nombre: 'Mariano', apellido: 'Martinez', edad: 51,telefono:'45858585',email:'marianom@gmail.com'},{nombre: 'Ezequiel', apellido: 'Perez', edad: 27,telefono:'45585585',email:'ezep@gmail.com'},{nombre: 'Lautaro', apellido: 'insua', edad: 18,telefono:'45234585',email:'lautaroi@gmail.com'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63651158c6bd63f9e18572c5"),
+    '1': ObjectId("63651158c6bd63f9e18572c6"),
+    '2': ObjectId("63651158c6bd63f9e18572c7")
+  }
+empresa> db.clientes.insertMany([{nombre: 'Hernan', apellido: 'Gliek', edad: 47,telefono:'47895585',email:'hernang@gmail.com'},{nombre: 'Ilan', apellido: 'Baron', edad: 29,telefono:'42355585',email:'ilanB@gmail.com'}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("636511c2c6bd63f9e18572c8"),
+    '1': ObjectId("636511c2c6bd63f9e18572c9")
+  }
+}
+empresa> db.clientes.find()
+[
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c5"),
+    nombre: 'Mariano',
+    apellido: 'Martinez',
+    edad: 51,
+    telefono: '45858585',
+    email: 'marianom@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c6"),
+    nombre: 'Ezequiel',
+    apellido: 'Perez',
+    edad: 27,
+    telefono: '45585585',
+    email: 'ezep@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c7"),
+    nombre: 'Lautaro',
+    apellido: 'insua',
+    edad: 18,
+    telefono: '45234585',
+    email: 'lautaroi@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c8"),
+    nombre: 'Hernan',
+    apellido: 'Gliek',
+    edad: 47,
+    telefono: '47895585',
+    email: 'hernang@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c9"),
+    nombre: 'Ilan',
+    apellido: 'Baron',
+    edad: 29,
+    telefono: '42355585',
+    email: 'ilanB@gmail.com'
+  }
+empresa> db.productos.insertMany([{nombre:'teclado',descripcion:'teclado gamer',stock:35,precio:3000},{nombre:'monitor',descripcion:'monitor led',stock:83,precio:45000},{nombre:'notebook',descripcion:'notebook lenovo',stock:5,precio:340000},{nombre:'impresora',descripcion:'impresora epson',stock:12,precio:28000}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63651305c6bd63f9e18572ca"),
+    '1': ObjectId("63651305c6bd63f9e18572cb"),
+    '2': ObjectId("63651305c6bd63f9e18572cc"),
+    '3': ObjectId("63651305c6bd63f9e18572cd")
+  }
+}
+empresa> show collections
+clientes
+productos
+empresa> db.productos.find()
+[
+  {
+    _id: ObjectId("63651305c6bd63f9e18572ca"),
+    nombre: 'teclado',
+    descripcion: 'teclado gamer',
+    stock: 35,
+    precio: 3000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cb"),
+    nombre: 'monitor',
+    descripcion: 'monitor led',
+    stock: 83,
+    precio: 45000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cc"),
+    nombre: 'notebook',
+    descripcion: 'notebook lenovo',
+    stock: 5,
+    precio: 340000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cd"),
+    nombre: 'impresora',
+    descripcion: 'impresora epson',
+    stock: 12,
+    precio: 28000
+  }
+]
+empresa> db.clientes.find()
+[
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c5"),
+    nombre: 'Mariano',
+    apellido: 'Martinez',
+    edad: 51,
+    telefono: '45858585',
+    email: 'marianom@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c6"),
+    nombre: 'Ezequiel',
+    apellido: 'Perez',
+    edad: 27,
+    telefono: '45585585',
+    email: 'ezep@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c7"),
+    nombre: 'Lautaro',
+    apellido: 'insua',
+    edad: 18,
+    telefono: '45234585',
+    email: 'lautaroi@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c8"),
+    nombre: 'Hernan',
+    apellido: 'Gliek',
+    edad: 47,
+    telefono: '47895585',
+    email: 'hernang@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c9"),
+    nombre: 'Ilan',
+    apellido: 'Baron',
+    edad: 29,
+    telefono: '42355585',
+    email: 'ilanB@gmail.com'
+  }
+]
+empresa> db.clientes.count()
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.
+5
+empresa> db.productos.count()
+4
+empresa> db.clientes.find().sort({edad:1})
+[
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c7"),
+    nombre: 'Lautaro',
+    apellido: 'insua',
+    edad: 18,
+    telefono: '45234585',
+    email: 'lautaroi@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c6"),
+    nombre: 'Ezequiel',
+    apellido: 'Perez',
+    edad: 27,
+    telefono: '45585585',
+    email: 'ezep@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c9"),
+    nombre: 'Ilan',
+    apellido: 'Baron',
+    edad: 29,
+    telefono: '42355585',
+    email: 'ilanB@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c8"),
+    nombre: 'Hernan',
+    apellido: 'Gliek',
+    edad: 47,
+    telefono: '47895585',
+    email: 'hernang@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c5"),
+    nombre: 'Mariano',
+    apellido: 'Martinez',
+    edad: 51,
+    telefono: '45858585',
+    email: 'marianom@gmail.com'
+  }
+]
+empresa> db.productos.find().sort({stock:-1})
+[
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cb"),
+    nombre: 'monitor',
+    descripcion: 'monitor led',
+    stock: 83,
+    precio: 45000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572ca"),
+    nombre: 'teclado',
+    descripcion: 'teclado gamer',
+    stock: 35,
+    precio: 3000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cd"),
+    nombre: 'impresora',
+    descripcion: 'impresora epson',
+    stock: 12,
+    precio: 28000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cc"),
+    nombre: 'notebook',
+    descripcion: 'notebook lenovo',
+    stock: 5,
+    precio: 340000
+  }
+]
+empresa> db.productos.find().sort({precio:-1}).limit(1)
+[
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cc"),
+    nombre: 'notebook',
+    descripcion: 'notebook lenovo',
+    stock: 5,
+    precio: 340000
+  }
+]
+empresa> db.clientes.find().sort({nombre:1}).limit(2)
+[
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c6"),
+    nombre: 'Ezequiel',
+    apellido: 'Perez',
+    edad: 27,
+    telefono: '45585585',
+    email: 'ezep@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c8"),
+    nombre: 'Hernan',
+    apellido: 'Gliek',
+    edad: 47,
+    telefono: '47895585',
+    email: 'hernang@gmail.com'
+  }
+]
+empresa> db.productos.updateOne({nombre: 'notebook'}, {$set: {precio: 390000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+empresa> db.productos.find()
+[
+  {
+    _id: ObjectId("63651305c6bd63f9e18572ca"),
+    nombre: 'teclado',
+    descripcion: 'teclado gamer',
+    stock: 35,
+    precio: 3000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cb"),
+    nombre: 'monitor',
+    descripcion: 'monitor led',
+    stock: 83,
+    precio: 45000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cc"),
+    nombre: 'notebook',
+    descripcion: 'notebook lenovo',
+    stock: 5,
+    precio: 390000
+  },
+  {
+    _id: ObjectId("63651305c6bd63f9e18572cd"),
+    nombre: 'impresora',
+    descripcion: 'impresora epson',
+    stock: 12,
+    precio: 28000
+  }
+]
+empresa> db.clientes.deleteOne({_id: ObjectId("6359459ec83cdb2d3450c507")})
+{ acknowledged: true, deletedCount: 0 }
+empresa> db.clientes.find()
+[
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c5"),
+    nombre: 'Mariano',
+    apellido: 'Martinez',
+    edad: 51,
+    telefono: '45858585',
+    email: 'marianom@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c6"),
+    nombre: 'Ezequiel',
+    apellido: 'Perez',
+    edad: 27,
+    telefono: '45585585',
+    email: 'ezep@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c7"),
+    nombre: 'Lautaro',
+    apellido: 'insua',
+    edad: 18,
+    telefono: '45234585',
+    email: 'lautaroi@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c8"),
+    nombre: 'Hernan',
+    apellido: 'Gliek',
+    edad: 47,
+    telefono: '47895585',
+    email: 'hernang@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c9"),
+    nombre: 'Ilan',
+    apellido: 'Baron',
+    edad: 29,
+    telefono: '42355585',
+    email: 'ilanB@gmail.com'
+  }
+]
+empresa> db.clientes.deleteOne({_id: ObjectId("636511c2c6bd63f9e18572c9")})
+{ acknowledged: true, deletedCount: 1 }
+empresa> db.clientes.find()
+[
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c5"),
+    nombre: 'Mariano',
+    apellido: 'Martinez',
+    edad: 51,
+    telefono: '45858585',
+    email: 'marianom@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c6"),
+    nombre: 'Ezequiel',
+    apellido: 'Perez',
+    edad: 27,
+    telefono: '45585585',
+    email: 'ezep@gmail.com'
+  },
+  {
+    _id: ObjectId("63651158c6bd63f9e18572c7"),
+    nombre: 'Lautaro',
+    apellido: 'insua',
+    edad: 18,
+    telefono: '45234585',
+    email: 'lautaroi@gmail.com'
+  },
+  {
+    _id: ObjectId("636511c2c6bd63f9e18572c8"),
+    nombre: 'Hernan',
+    apellido: 'Gliek',
+    edad: 47,
+    telefono: '47895585',
+    email: 'hernang@gmail.com'
+  }
+]
+empresa> db.productos.find({},{nombre:1,precio:1,_id:0}).sort({precio:1})
+[
+  { nombre: 'teclado', precio: 3000 },
+  { nombre: 'impresora', precio: 28000 },
+  { nombre: 'monitor', precio: 45000 },
+  { nombre: 'notebook', precio: 390000 }
+]
+empresa> db.clientes.find({},{nombre:1,email:1,_id:0})
+[
+  { nombre: 'Mariano', email: 'marianom@gmail.com' },
+  { nombre: 'Ezequiel', email: 'ezep@gmail.com' },
+  { nombre: 'Lautaro', email: 'lautaroi@gmail.com' },
+  { nombre: 'Hernan', email: 'hernang@gmail.com' }
+]
+empresa>
